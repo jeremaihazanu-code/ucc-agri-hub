@@ -1,0 +1,611 @@
+/* ============================================================
+   UCC SCHOOL OF AGRICULTURE ACADEMIC HUB
+   Main Stylesheet
+   ============================================================ */
+
+/* ---------- 1. RESET & VARIABLES ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+:root {
+    --primary-green: #2e7d32;
+    --dark-green: #1b5e20;
+    --light-green: #e8f5e9;
+    --accent-gold: #c8a951;
+    --white: #ffffff;
+    --off-white: #f9fbf9;
+    --gray-light: #f1f3f2;
+    --gray-medium: #cfd8d2;
+    --text-dark: #1e2a1e;
+    --text-muted: #4a5a4a;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.08);
+    --border-radius: 16px;
+    --border-radius-sm: 10px;
+    --transition: all 0.2s ease;
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* ---------- 2. TYPOGRAPHY & LAYOUT ---------- */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-green);
+}
+
+.section-title i {
+    color: var(--accent-gold);
+}
+
+/* ---------- 3. BUTTONS ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    background: var(--white);
+    color: var(--dark-green);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-medium);
+}
+
+.btn-primary {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+}
+
+.btn-outline:hover {
+    background: var(--light-green);
+}
+
+.btn-gold {
+    background: var(--accent-gold);
+    color: var(--dark-green);
+    border: none;
+}
+
+.btn-gold:hover {
+    background: #b8983a;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+/* ---------- 4. HEADER & NAVIGATION ---------- */
+header {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    flex-wrap: wrap;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    background: var(--primary-green);
+    color: var(--white);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.logo-text h1 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: var(--dark-green);
+}
+
+.logo-text span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-dark);
+    padding: 0.4rem 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    border-bottom-color: var(--accent-gold);
+    color: var(--primary-green);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--dark-green);
+    cursor: pointer;
+}
+
+/* ---------- 5. BREADCRUMB ---------- */
+.breadcrumb {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.breadcrumb a {
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.breadcrumb i {
+    font-size: 0.7rem;
+    margin: 0 0.2rem;
+}
+
+/* ---------- 6. HERO ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+    padding: 3rem 0;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--gray-medium);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    color: var(--dark-green);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ---------- 7. CARDS & GRIDS ---------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    transition: var(--transition);
+    border: 1px solid var(--gray-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: var(--accent-gold);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--primary-green);
+    margin-bottom: 0.8rem;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-green);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.badge {
+    background: var(--light-green);
+    color: var(--dark-green);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+/* ---------- 8. SEARCH & FILTER ---------- */
+.search-section {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    border: 1px solid var(--gray-light);
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.filter-grid select,
+.filter-grid input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--border-radius-sm);
+    background: var(--white);
+    color: var(--text-dark);
+}
+
+/* ---------- 9. TABLES ---------- */
+.table-wrapper {
+    overflow-x: auto;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th {
+    background: var(--light-green);
+    color: var(--dark-green);
+    font-weight: 600;
+    padding: 1rem 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--gray-medium);
+}
+
+td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- 10. DASHBOARD ---------- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.dashboard-sidebar {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem 1rem;
+    box-shadow: var(--shadow-sm);
+    height: fit-content;
+    border: 1px solid var(--gray-light);
+}
+
+.dashboard-sidebar ul li {
+    padding: 0.7rem 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+}
+
+.dashboard-sidebar ul li i {
+    width: 20px;
+    color: var(--primary-green);
+}
+
+.dashboard-sidebar ul li:hover,
+.dashboard-sidebar ul li.active {
+    background: var(--light-green);
+    color: var(--dark-green);
+}
+
+.dashboard-main {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.8rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-light);
+}
+
+/* ---------- 11. QUIZ ---------- */
+.quiz-question {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--accent-gold);
+}
+
+.quiz-option {
+    display: block;
+    margin: 0.8rem 0;
+    padding: 0.8rem 1rem;
+    background: var(--gray-light);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.quiz-option:hover {
+    background: var(--light-green);
+    border-color: var(--primary-green);
+}
+
+.quiz-option input {
+    margin-right: 0.8rem;
+}
+
+/* ---------- 12. FOOTER ---------- */
+footer {
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 2.5rem 0 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-col ul li a {
+    color: #d0e0d0;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-gold);
+}
+
+.footer-disclaimer {
+    border-top: 1px solid #3a5a3a;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #b0c0b0;
+    text-align: center;
+}
+
+/* ---------- 13. MODAL ---------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-box {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* ---------- 14. UTILITY CLASSES ---------- */
+.text-muted { color: var(--text-muted); }
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.hidden { display: none; }
+
+/* ---------- 15. RESPONSIVE DESIGN ---------- */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0;
+        gap: 0.5rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+  }
